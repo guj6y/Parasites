@@ -4,3 +4,5 @@
 *.mat
 Junk/*
 Data/*
+Code/Dynamical-Study/FigData/*
+Code/Dynamical-Study/FigureData/*
