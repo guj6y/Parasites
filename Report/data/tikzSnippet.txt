@@ -1,0 +1,38 @@
+\usepackage{tikz,pgfplots,graphicx}
+\def \fileNameToPlot {data/frac-con-first-small-big-subplot-} 
+
+\begin{tikzpicture}
+\begin{axis}[x = 15cm,
+		    xlabel = {Fraction Consumers as parasites},
+			ylabel = {Fraction of Parasites},
+		    legend pos = south east]
+\addplot+[
+		  only marks, mark = o,
+          error bars/.cd,
+		  y explicit, y dir=both,
+		]
+table[x =x,y =y,y error =yp,col sep = comma]{\fileNameToPLot1}
+\addlegendentry{\tiny Null Model}
+\addplot+[
+		  only marks, mark = triangle,
+          error bars/.cd,
+		  y explicit, y dir=both,
+		]
+table[x =x,y =y,y error =yp,col sep = comma]{\fileNameToPLot2}
+\addlegendentry{\tiny Host Refuge}
+\addplot+[
+		  only marks, mark = square,
+          error bars/.cd,
+		  y explicit, y dir=both,
+		]
+table[x =x,y =y,y error =yp,col sep = comma]{\fileNameToPLot3}
+\addlegendentry{\tiny Concomittant Only}
+\addplot+[
+		  only marks, mark = diamond,
+          error bars/.cd,
+		  y explicit, y dir=both,
+		]
+table[x =x,y =y,y error =yp,col sep = comma]{\fileNameToPLot4}
+\addlegendentry{\tiny Refuge with Concomittant}
+\end{axis}
+\end{tikzpicture}
