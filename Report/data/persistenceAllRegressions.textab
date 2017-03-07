@@ -1,6 +1,6 @@
 \begin{tabular}{c |c c| c c |c c |c}
 \hline
-$\beta_0$&$p$-value&\$beta_1$&$p$-value&$\beta_2$&$p$-value&Adj. $R^2$\\
+$\beta_0$&$p$-value&$\beta_1$&$p$-value&$\beta_2$&$p$-value&Adj. $R^2$\\
  \hline
 \\multirow{4}{*}{subplot A}&0.653&3.983e-312&-0.961&3.750e-17&1.132&1.970e-07&0.152\\
 &0.653&5.350e-313&-1.168&2.154e-24&1.261&6.515e-09&0.242\\
