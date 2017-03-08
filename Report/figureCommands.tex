@@ -11,32 +11,24 @@
 \newcommand{\markFour}{diamond*}
 
 
-\newcommand{\tikzPlotStyleOne}{
+\newcommand{\tikzPlotStylea}{
 \begin{tikzpicture}
-\draw [color = blue] (-.25,0) -- (.25,0)
-node [pos = .5] (mark) {};
-\draw[\colorOne] plot[\markOne] (mark);
+\draw[linecolora] plot[mark = \markOne] (0,0);
 \end{tikzpicture}
 }
-\newcommand{\tikzplotstyleTwo}{
+\newcommand{\tikzPlotStyleb}{
 \begin{tikzpicture}
-\draw [color = red] (-.25,0) -- (.25,0)
-node [pos = .5] (mark) {};
-\draw [\colorTwo] plot[\markTwo] (mark);
+\draw [linecolorb] plot[mark = \markTwo] (0,0);
 \end{tikzpicture}
 }
-\newcommand{\tikzplotstyleThree}{
+\newcommand{\tikzPlotStylec}{
 \begin{tikzpicture}
-\draw [color =brown ] (-.25,0) -- (.25,0)
-node [pos = .5] (mark) {};
-\draw [\colorThree] plot[\markThree] (mark);
+\draw [linecolorc] plot[mark = \markThree] (0,0);
 \end{tikzpicture}
 }
-\newcommand{\tikzplotstyleFour}{
+\newcommand{\tikzPlotStyled}{
 \begin{tikzpicture}
-\draw [color = black] (-.25,0) -- (.25,0)
-node [pos = .5] (mark) {};
-\draw [\colorFour] plot[\markFour] (mark);
+\draw [linecolord] plot[mark = \markFour] (0,0);
 \end{tikzpicture}
 }
 \pgfplotsset{
