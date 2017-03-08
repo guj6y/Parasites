@@ -55,29 +55,29 @@ node [pos = .5] (mark) {};
 			grid = both,
 ] 
 \addplot+[
-		  only marks, mark = *,
+		  only marks, \markOne, \colorOne,
           error bars/.cd,
 		  y explicit, y dir=both,
 		]
-table[blue,x =x,y =y,y error =yp,col sep = comma]{#1-small-small-subplot-#2};
+table[\colorOne,x =x,y =y,y error =yp,col sep = comma]{#1-small-small-subplot-#2};
 \addplot+[
-		  only marks, mark = triangle*,
+		  only marks, \markTwo, \colorTwo,
           error bars/.cd,
 		  y explicit, y dir=both,
 		]
-table[red,x =x,y =y,y error =yp,col sep = comma]{#1-small-big-subplot-#2};
+table[\colorTwo,x =x,y =y,y error =yp,col sep = comma]{#1-small-big-subplot-#2};
 \addplot+[
-		  only marks, mark = square*,
+		  only marks, \markThree, \colorThree,
           error bars/.cd,
 		  y explicit, y dir=both,
 		]
-table[brown,x =x,y =y,y error =yp,col sep = comma]{#1-big-small-subplot-#2};
+table[\colorThree,x =x,y =y,y error =yp,col sep = comma]{#1-big-small-subplot-#2};
 \addplot+[
-		  only marks, mark = diamond*,
+		  only marks, \markFour, \colorFour,
           error bars/.cd,
 		  y explicit, y dir=both,
 		]
-table[black,x =x,y =y,y error =yp,col sep = comma]{#1-big-big-subplot-#2};
+table[\colorFour,x =x,y =y,y error =yp,col sep = comma]{#1-big-big-subplot-#2};
 \legend{$Z_f=10;Z_p = 10^{-3}$,
 $Z_f=10;Z_p = 10^{-4}$,
 $Z_f=100;Z_p = 10^{-3}$,
