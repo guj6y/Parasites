@@ -1,14 +1,14 @@
 \usetikzlibrary{plotmarks}
 
-\newcommand{\colorOne}{color=blue}
-\newcommand{\colorTwo}{color=red}
-\newcommand{\colorThree}{color=brown}
-\newcommand{\colorFour}{color=black}
+\colorlet{linecolora}{blue}
+\colorlet{linecolorb}{red}
+\colorlet{linecolorc}{brown}
+\colorlet{linecolord}{black}
 
-\newcommand{\markOne}{mark=*,marksize=2pt}
-\newcommand{\markTwo}{mark=triangle*,marksize=2pt}
-\newcommand{\markThree}{mark=square*,marksize=2pt}
-\newcommand{\markFour}{mark=diamond*,marksize=2pt}
+\newcommand{\markOne}{*}
+\newcommand{\markTwo}{triangle*}
+\newcommand{\markThree}{square*}
+\newcommand{\markFour}{diamond*}
 
 
 \newcommand{\tikzPlotStyleOne}{
@@ -39,7 +39,12 @@ node [pos = .5] (mark) {};
 \draw [\colorFour] plot[\markFour] (mark);
 \end{tikzpicture}
 }
-
+\pgfplotsset{
+plotoptsa/.style={only marks,color=linecolora,mark=\markOne},
+plotoptsb/.style={only marks,color=linecolorb,mark=\markTwo},
+plotoptsc/.style={only marks,color=linecolorc,mark=\markThree},
+plotoptsd/.style={only marks,color=linecolord,mark=\markFour}
+}
 
 \newcommand{\makeFigureAllSizes}[3]{
 \begin{tikzpicture}
@@ -55,29 +60,29 @@ node [pos = .5] (mark) {};
 			grid = both,
 ] 
 \addplot+[
-		  only marks, \markOne, \colorOne,
+		  plotoptsa,
           error bars/.cd,
 		  y explicit, y dir=both,
 		]
-table[\colorOne,x =x,y =y,y error =yp,col sep = comma]{#1-small-small-subplot-#2};
+table[linecolora,x =x,y =y,y error =yp,col sep = comma]{#1-small-small-subplot-#2};
 \addplot+[
-		  only marks, \markTwo, \colorTwo,
+		  plotoptsb,
           error bars/.cd,
 		  y explicit, y dir=both,
 		]
-table[\colorTwo,x =x,y =y,y error =yp,col sep = comma]{#1-small-big-subplot-#2};
+table[linecolorb,x =x,y =y,y error =yp,col sep = comma]{#1-small-big-subplot-#2};
 \addplot+[
-		  only marks, \markThree, \colorThree,
+		  plotoptsc,
           error bars/.cd,
 		  y explicit, y dir=both,
 		]
-table[\colorThree,x =x,y =y,y error =yp,col sep = comma]{#1-big-small-subplot-#2};
+table[linecolorc,x =x,y =y,y error =yp,col sep = comma]{#1-big-small-subplot-#2};
 \addplot+[
-		  only marks, \markFour, \colorFour,
+ 		  plotoptsd,
           error bars/.cd,
 		  y explicit, y dir=both,
 		]
-table[\colorFour,x =x,y =y,y error =yp,col sep = comma]{#1-big-big-subplot-#2};
+table[linecolord,x =x,y =y,y error =yp,col sep = comma]{#1-big-big-subplot-#2};
 \legend{$Z_f=10;Z_p = 10^{-3}$,
 $Z_f=10;Z_p = 10^{-4}$,
 $Z_f=100;Z_p = 10^{-3}$,
@@ -126,3 +131,4 @@ table[black,x =x,y =y,y error =yp,col sep = comma]{#1-4};
  Refuge with Concomittant}
 \end{axis}
 \end{tikzpicture}
+}
