@@ -7,9 +7,9 @@ graphicx,
 caption,
 subcaption,
 tikzscale,
+multirow
 }
 \usepackage[margin=0.7in]{geometry}
-
 \pgfplotsset{table/search path={data/},compat=newest}
 
 \input{figureCommands.tex}
@@ -56,6 +56,8 @@ Adding Concomittant predation to the null model (figure \ref{fig:persistenceAllc
 
 Splitting the parasitic biomass into a fraction inside and and a fraction outside of their hosts (figure \ref{fig:persistenceAllb}) initially (in terms of increasing parasite fraction) causes a faster decrease in persistence.  
 Furthermore, the persistence does not level out as in the other two models (left column) but continues decreasing up to the highest level of parsitism.  Adding concomittant predation to this model (figure \ref{fig:persistenceAlld}) again had little discernable effect on the average persistence.
+
+\input{data/persistenceAllRegressions.textab}
 
 \subsection{Free Living Consumer Persistence \label{sec:persistenceFree}}
 
